@@ -6,6 +6,10 @@ import facebook from "../assets/facebook.png";
 import youtube from "../assets/youtube.png";
 import instagram from "../assets/instagram.png";
 import twitter from "../assets/twitter.png";
+import shipping from "../assets/shipping.png";
+import refund from "../assets/refund.png";
+import support from "../assets/support.png";
+import hero from "../assets/hero.png";
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default { crown, search, user, bucket, facebook, youtube, instagram, twitter };
+export default { crown, search, user, bucket, facebook, youtube, instagram, twitter, shipping, refund, support, hero };

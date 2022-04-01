@@ -1,6 +1,6 @@
 .footer__container {
   position: relative;
-  width: 100%;
+  width: 100vw;
   display: flex;
   align-items: flex-start;
   padding: 5rem 5rem 0;
@@ -9,8 +9,11 @@
 
   @media screen and (max-width: 930px) {
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 3rem 3rem 0;
   }
 }
 
@@ -31,6 +34,9 @@
     margin-right: 0;
     margin-bottom: 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 .motto {
@@ -46,6 +52,7 @@
 .footer__container-right {
   flex: 1.5;
   display: flex;
+  flex-wrap: wrap;
 
   div {
     text-align: start;
@@ -80,13 +87,15 @@
     }
 
     @media screen and (max-width: 930px) {
-      flex: 10;
+      flex: none;
     }
   }
 
   @media screen and (max-width: 930px) {
-    display: flex;
+    width: 100%;
+    flex: none;
     justify-content: space-between;
+    margin-bottom: 10rem;
   }
 }
 
@@ -117,6 +126,19 @@
       height: 100%;
       object-fit: contain;
     }
+
+    @media screen and (max-width: 500px) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  @media screen and (max-width: 930px) {
+    bottom: 10%;
+  }
+
+  @media screen and (max-width: 500px) {
+    left: 15%;
   }
 }
 
