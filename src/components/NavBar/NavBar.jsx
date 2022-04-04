@@ -1,12 +1,28 @@
-import React, { useState } from "react";
-import { HiX } from "react-icons/hi";
-import { AiOutlineMenu } from "react-icons/ai";
-import { motion } from "framer-motion";
-import { images } from "../../constants";
-import "./NavBar.scss";
+import React, { useState } from 'react';
+import { HiX } from 'react-icons/hi';
+import { AiOutlineMenu } from 'react-icons/ai';
+import { motion } from 'framer-motion';
+import { images } from '../../constants';
+import { Link } from 'react-router-dom';
+import './NavBar.scss';
 
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
+
+  const navLink = [
+    {
+      title: 'home',
+      to: '/'
+    },
+    {
+      title: 'shop',
+      to: 'shop'
+    },
+    {
+      title: 'contact',
+      to: 'contact'
+    }
+  ];
 
   const { bucket, search, user, crown } = images;
 
@@ -14,12 +30,16 @@ const NavBar = () => {
     <nav className="navbar__container">
       <div className="navbar__container-top">
         <div className="navbar__item-left">
-          <div className="navbar__logo">
-            <img src={crown} alt="logo" />
-          </div>
-          <div className="navbar__title">
-            <h2>crown</h2>
-          </div>
+          <Link to="/" className="header">
+            <div className="navbar__logo">
+              <img src={crown} alt="logo" />
+            </div>
+          </Link>
+          <Link to="/">
+            <div className="navbar__title">
+              <h2>crown</h2>
+            </div>
+          </Link>
         </div>
         <div className="navbar__item-right">
           <div className="item">
@@ -39,12 +59,14 @@ const NavBar = () => {
             <AiOutlineMenu onClick={() => setToggle(true)} />
 
             {toggle && (
-              <motion.div whileInView={{ x: [300, 0] }} transition={{ duration: 0.85, ease: "easeOut" }}>
+              <motion.div whileInView={{ x: [300, 0] }} transition={{ duration: 0.85, ease: 'easeOut' }}>
                 <HiX onClick={() => setToggle(false)} />
                 <ul>
-                  {["home", "shop", "contact"].map((item) => (
+                  {navLink.map((item) => (
                     <li key={item}>
-                      <p onClick={() => setToggle(false)}>{item}</p>
+                      <Link to={item.to}>
+                        <p onClick={() => setToggle(false)}>{item.title}</p>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -56,8 +78,10 @@ const NavBar = () => {
       <div className="navbar__container-bottom">
         <div className="top-border"></div>
         <ul className="navbar__links">
-          {["home", "shop", "contact"].map((item, i) => (
-            <li key={i}>{item}</li>
+          {navLink.map((item, i) => (
+            <li key={i}>
+              <Link to={item.to}>{item.title}</Link>
+            </li>
           ))}
         </ul>
         <div className="bottom-border"></div>

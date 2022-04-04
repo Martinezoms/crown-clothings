@@ -1,0 +1,7 @@
+.views__container {
+  margin: 12rem 0 5rem 0;
+
+  @media screen and (max-width: 800px) {
+    margin: 5rem 0 3rem 0;
+  }
+}

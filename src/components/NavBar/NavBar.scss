@@ -28,17 +28,18 @@
   div {
     display: flex;
     align-items: flex-end;
-  }
-  div h2 {
-    margin: 0;
-    font-size: 40px;
-    text-transform: uppercase;
-    font-weight: 200;
-    font-family: "Qahiri", sans-serif;
 
-    @media screen and (max-width: 800px) {
-      font-size: 30px;
-      font-weight: 100;
+    h2 {
+      margin: 0;
+      font-size: 40px;
+      text-transform: uppercase;
+      font-weight: 200;
+      font-family: 'Qahiri', sans-serif;
+
+      @media screen and (max-width: 800px) {
+        font-size: 30px;
+        font-weight: 100;
+      }
     }
   }
 }
@@ -77,7 +78,7 @@
     height: 30px;
     cursor: pointer;
 
-    &:last-child {
+    &:nth-child(3) {
       margin-right: 0;
     }
 
@@ -98,8 +99,12 @@
       &:first-child {
         display: none;
       }
+      &:nth-child(3) {
+        margin-right: 3rem;
+      }
       &:last-child {
         display: block;
+        margin-right: 0.5rem;
       }
     }
   }

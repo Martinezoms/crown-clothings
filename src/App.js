@@ -1,12 +1,9 @@
-import { NavBar, Footer } from "./components";
-import { HomePage } from "./routes";
+import Views from './Views/Views';
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <HomePage />
-      <Footer />
+    <div>
+      <Views />
     </div>
   );
 }

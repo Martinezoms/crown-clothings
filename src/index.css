@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Qahiri&family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Qahiri&family=Roboto&display=swap');
 
 :root {
   --primary-color: #fff;
@@ -19,7 +19,7 @@ body {
   margin: 0;
   padding: 0;
   background: var(--primary-color);
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   animation: fadeIn 0.3s;
@@ -68,6 +68,18 @@ li {
 ul {
   padding: 0;
 }
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: inherit;
+}
+
+a:hover {
+  opacity: 0.5;
+  transition: all 0.2s ease-in-out;
+}
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
