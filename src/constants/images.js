@@ -5,6 +5,8 @@ import bucket from '../assets/bucket.png';
 import facebook from '../assets/facebook.png';
 import youtube from '../assets/youtube.png';
 import instagram from '../assets/instagram.png';
+import google from '../assets/google.png';
+
 import twitter from '../assets/twitter.png';
 import shipping from '../assets/shipping.png';
 import refund from '../assets/refund.png';
@@ -26,5 +28,6 @@ export default {
   refund,
   support,
   hero,
-  error
+  error,
+  google
 };

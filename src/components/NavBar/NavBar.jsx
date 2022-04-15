@@ -46,7 +46,9 @@ const NavBar = () => {
             <img src={search} alt="search" />
           </div>
           <div className="item">
-            <img src={user} alt="user" />
+            <Link to="user" title="sigin">
+              <img src={user} alt="user" />
+            </Link>
           </div>
           <div className="bucket item">
             <div>

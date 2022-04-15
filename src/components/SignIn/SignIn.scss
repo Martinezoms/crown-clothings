@@ -1,0 +1,28 @@
+.signin__container {
+  margin: 12rem 0 5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  @media screen and (max-width: 800px) {
+    margin: 5rem 0 3rem 0;
+  }
+
+  & .signin__box {
+    padding: 24px 24px 16px;
+    width: 350px;
+
+  }
+
+  & .signin__items {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    & .signin__items-item {
+      width: 100%;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 .button {
-  max-width: 124px;
+ width: 100%;
   height: 48px;
   display: flex;
   align-items: center;
@@ -9,12 +9,12 @@
     width: 100%;
     height: 100%;
     border: 1px solid black;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
 
     &:hover {
       opacity: 0.5;
-      transition: all 0.2s ease-in-out;
     }
   }
 }

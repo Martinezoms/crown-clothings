@@ -1,7 +1,7 @@
-import React from "react";
-import { Button } from "../../atoms";
-import { images } from "../../constants";
-import "./Hero.scss";
+import React from 'react';
+import { Button } from '../../atoms';
+import { images } from '../../constants';
+import './Hero.scss';
 
 const Hero = () => {
   return (
@@ -20,7 +20,9 @@ const Hero = () => {
             <span>modern clothings</span>
           </h1>
         </div>
-        <Button title="view now" color="inherit" />
+        <div className="hero__button">
+          <Button title="view now" color="inherit" />
+        </div>
       </div>
     </div>
   );

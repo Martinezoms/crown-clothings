@@ -73,11 +73,11 @@ a {
   text-decoration: none;
   text-transform: uppercase;
   color: inherit;
+  transition: all 0.2s ease-in-out;
 }
 
 a:hover {
   opacity: 0.5;
-  transition: all 0.2s ease-in-out;
 }
 
 code {

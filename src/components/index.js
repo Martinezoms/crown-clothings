@@ -4,3 +4,5 @@ export { default as Layout } from './Layout';
 export { default as ServiceOffered } from './ServiceOffered/ServiceOffered';
 export { default as Hero } from './Hero/Hero';
 export { default as CategoryItem } from './CategoryItem/CategoryItem';
+export { default as SignIn } from './SignIn/SignIn';
+export { default as SignUp } from './SignUp/SignUp';
