@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../utils/firebase/firebase';
+import {
+  createAuthUserWithEmailAndPassword,
+  createUserDocumentFromAuth,
+  signInWithGooglePopup
+} from '../../utils/firebase/firebase';
 import { Button, Input, ButtonWithIcon } from '../../atoms';
 import { Link } from 'react-router-dom';
 import { images } from '../../constants';
@@ -25,7 +29,7 @@ const SignUp = () => {
     },
     {
       name: 'email',
-      type: 'text',
+      type: 'email',
       value: email,
       placeholder: 'Email',
       required: true
@@ -38,6 +42,11 @@ const SignUp = () => {
       required: true
     }
   ];
+
+  const signupWithUser = async () => {
+    const { user } = await signInWithGooglePopup();
+    await createUserDocumentFromAuth(user);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -86,7 +95,7 @@ const SignUp = () => {
             <div className="signup__items-item">
               <p>Or</p>
             </div>
-            <div className="signup__items-item">
+            <div className="signup__items-item" onClick={signupWithUser}>
               <ButtonWithIcon img={images.google} title="Continue with Google" />
             </div>
             <div className="signup__items-item">
