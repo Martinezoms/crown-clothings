@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { UserContext } from '../../contexts/userContext';
+import { signOutUser } from '../../utils/firebase/firebase';
 import { HiX } from 'react-icons/hi';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { motion } from 'framer-motion';
@@ -9,7 +11,32 @@ import './NavBar.scss';
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
 
+  const { currentUser } = useContext(UserContext);
+
   const navLink = [
+    {
+      title: 'home',
+      to: '/'
+    },
+    {
+      title: 'shop',
+      to: 'shop'
+    },
+    {
+      title: 'contact',
+      to: 'contact'
+    },
+    {
+      title: 'sign in',
+      to: '/user'
+    },
+    {
+      title: 'sign up',
+      to: '/user/signup'
+    }
+  ];
+
+  const bottomMenu = [
     {
       title: 'home',
       to: '/'
@@ -25,6 +52,10 @@ const NavBar = () => {
   ];
 
   const { bucket, search, user, crown } = images;
+
+  const handleSignOut = async () => {
+    await signOutUser();
+  };
 
   return (
     <nav className="navbar__container">
@@ -45,19 +76,33 @@ const NavBar = () => {
           <div className="item">
             <img src={search} alt="search" />
           </div>
-          <div className="item">
-            <Link to="user" title="sigin">
-              <img src={user} alt="user" />
-            </Link>
+          <div className="item user">
+            <img src={user} alt="user" />
+            <div className="user-nav">
+              {currentUser ? (
+                <>
+                  <p onClick={handleSignOut}>Sign Out</p>
+                </>
+              ) : (
+                <>
+                  <Link to="/user">
+                    <p>Sign In</p>
+                  </Link>
+                  <Link to="user/signup">
+                    <p>Sign Up</p>
+                  </Link>
+                </>
+              )}
+            </div>
           </div>
-          <div className="bucket item">
+          <div className="item bucket">
             <div>
               <p>13</p>
             </div>
             <img src={bucket} alt="cart" />
           </div>
 
-          <div className="navbar-menu">
+          <div className="item navbar-menu">
             <AiOutlineMenu onClick={() => setToggle(true)} />
 
             {toggle && (
@@ -80,7 +125,7 @@ const NavBar = () => {
       <div className="navbar__container-bottom">
         <div className="top-border"></div>
         <ul className="navbar__links">
-          {navLink.map((item, i) => (
+          {bottomMenu.map((item, i) => (
             <li key={i}>
               <Link to={item.to}>{item.title}</Link>
             </li>

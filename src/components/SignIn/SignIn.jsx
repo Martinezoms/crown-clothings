@@ -37,8 +37,7 @@ const SignIn = () => {
   ];
 
   const signinWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
 
   const handleChange = (e) => {
@@ -50,8 +49,8 @@ const SignIn = () => {
     e.preventDefault();
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword(email, password);
-      console.log(response);
+      await signInAuthUserWithEmailAndPassword(email, password);
+
       setFormData(initialFormData);
     } catch (error) {
       switch (error.code) {

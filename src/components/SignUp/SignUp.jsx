@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
@@ -19,6 +20,9 @@ const SignUp = () => {
   const [formData, setFormData] = useState(initialFormData);
 
   const { name, email, password } = formData;
+
+  const navigate = useNavigate();
+
   const inputs = [
     {
       name: 'name',
@@ -43,9 +47,8 @@ const SignUp = () => {
     }
   ];
 
-  const signupWithUser = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+  const signupWithGoogle = async () => {
+    await signInWithGooglePopup();
   };
 
   const handleSubmit = async (e) => {
@@ -56,6 +59,7 @@ const SignUp = () => {
 
       await createUserDocumentFromAuth(user, { name });
       setFormData(initialFormData);
+      navigate('/user');
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
         alert('user email already in use');
@@ -95,7 +99,7 @@ const SignUp = () => {
             <div className="signup__items-item">
               <p>Or</p>
             </div>
-            <div className="signup__items-item" onClick={signupWithUser}>
+            <div className="signup__items-item" onClick={signupWithGoogle}>
               <ButtonWithIcon img={images.google} title="Continue with Google" />
             </div>
             <div className="signup__items-item">
