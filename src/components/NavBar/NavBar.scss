@@ -77,8 +77,6 @@
       margin-right: 0;
     }
 
-
-    
     &:last-child {
       display: none;
     }
@@ -210,7 +208,7 @@
     z-index: 5;
     padding: 1rem;
 
-    width: 80%;
+    width: 50%;
     height: 100vh;
 
     display: flex;
@@ -253,7 +251,6 @@
         }
       }
     }
-
   }
   @media screen and (max-width: 900px) {
     display: none;
@@ -268,14 +265,15 @@
     display: none;
     position: absolute;
     z-index: 30000;
-    top:100%;
+    top: 100%;
     background-color: white;
     width: 5rem;
     height: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border: 1px solid black;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     text-align: center;
 
-    @media screen and (max-width:800px){
+    @media screen and (max-width: 800px) {
       display: none;
     }
 
@@ -287,11 +285,8 @@
         background-color: #ddd;
       }
     }
-
   }
   &:hover .user-nav {
     display: block;
   }
-
-
 }

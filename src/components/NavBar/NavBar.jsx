@@ -106,7 +106,7 @@ const NavBar = () => {
             <AiOutlineMenu onClick={() => setToggle(true)} />
 
             {toggle && (
-              <motion.div whileInView={{ x: [300, 0] }} transition={{ duration: 0.85, ease: 'easeOut' }}>
+              <motion.div whileInView={{ x: [200, 0] }} transition={{ duration: 0.5, ease: 'easeOut' }}>
                 <HiX onClick={() => setToggle(false)} />
                 <ul>
                   {navLink.map((item) => (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomePage, ErrorPage } from '../routes';
+import { HomePage, ErrorPage, ShopPage } from '../routes';
 import { Routes, Route } from 'react-router-dom';
 import './Views.scss';
 import { Layout, SignIn, SignUp } from '../components';
@@ -9,6 +9,7 @@ const Views = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
+        <Route path="shop" element={<ShopPage />} />
 
         {/* For user authentication (signin/signup) */}
         <Route path="user">

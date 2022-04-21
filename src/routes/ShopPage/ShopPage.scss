@@ -1,0 +1,21 @@
+.shop__container {
+  margin: 12rem 0 5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  @media screen and (max-width: 800px) {
+    margin: 5rem 0 3rem 0;
+  }
+
+  & .shop__items {
+    margin: 0 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
