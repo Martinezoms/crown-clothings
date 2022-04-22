@@ -22,7 +22,7 @@ body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  animation: fadeIn 0.3s;
+  animation: fadeIn 1.5s;
 }
 
 @keyframes fadeIn {

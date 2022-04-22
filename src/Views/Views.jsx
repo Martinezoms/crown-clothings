@@ -16,10 +16,10 @@ const Views = () => {
           <Route index element={<SignIn />} />
           <Route path="signup" element={<SignUp />} />
         </Route>
-      </Route>
 
-      {/* For 404 error page via route */}
-      <Route path="*" element={<ErrorPage />} />
+        {/* For 404 error page via route */}
+        <Route path="*" element={<ErrorPage />} />
+      </Route>
     </Routes>
   );
 };
