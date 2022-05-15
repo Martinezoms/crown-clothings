@@ -1,5 +1,9 @@
 import React, { useState, useContext } from 'react';
+import CartDropdown from '../CartDropdown/CartDropdown';
+
 import { UserContext } from '../../contexts/userContext';
+import { CartContext } from '../../contexts/CartContext';
+
 import { signOutUser } from '../../utils/firebase/firebase';
 import { HiX } from 'react-icons/hi';
 import { AiOutlineMenu } from 'react-icons/ai';
@@ -9,9 +13,10 @@ import { Link } from 'react-router-dom';
 import './NavBar.scss';
 
 const NavBar = () => {
-  const [toggle, setToggle] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState(false);
 
   const { currentUser } = useContext(UserContext);
+  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
 
   const navLink = [
     {
@@ -96,23 +101,24 @@ const NavBar = () => {
             </div>
           </div>
           <div className="item bucket">
-            <div>
+            <div className="item-count">
               <p>13</p>
             </div>
-            <img src={bucket} alt="cart" />
+            <img src={bucket} alt="cart" onClick={() => setIsCartOpen(!isCartOpen)} />
+            {isCartOpen && <CartDropdown />}
           </div>
 
           <div className="item navbar-menu">
-            <AiOutlineMenu onClick={() => setToggle(true)} />
+            <AiOutlineMenu onClick={() => setToggleMenu(true)} />
 
-            {toggle && (
+            {toggleMenu && (
               <motion.div whileInView={{ x: [200, 0] }} transition={{ duration: 0.5, ease: 'easeOut' }}>
-                <HiX onClick={() => setToggle(false)} />
+                <HiX onClick={() => setToggleMenu(false)} />
                 <ul>
                   {navLink.map((item) => (
                     <li key={item}>
                       <Link to={item.to}>
-                        <p onClick={() => setToggle(false)}>{item.title}</p>
+                        <p onClick={() => setToggleMenu(false)}>{item.title}</p>
                       </Link>
                     </li>
                   ))}

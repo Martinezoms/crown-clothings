@@ -11,7 +11,7 @@ const ShopPage = () => {
       <div className="shop__items">
         {products.map((product) => (
           <div key={product.id}>
-            <ShopItem {...product} />
+            <ShopItem {...product} product={product} />
           </div>
         ))}
       </div>
