@@ -16,7 +16,7 @@ const NavBar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   const { currentUser } = useContext(UserContext);
-  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
+  const { isCartOpen, setIsCartOpen, cartCount } = useContext(CartContext);
 
   const navLink = [
     {
@@ -68,7 +68,7 @@ const NavBar = () => {
         <div className="navbar__item-left">
           <Link to="/" className="header">
             <div className="navbar__logo">
-              <img src={crown} alt="logo" />
+              <img src={crown} alt="logo" className='logo' />
             </div>
           </Link>
           <Link to="/">
@@ -79,10 +79,10 @@ const NavBar = () => {
         </div>
         <div className="navbar__item-right">
           <div className="item">
-            <img src={search} alt="search" />
+            <img src={search} alt="search" className='item-logo' />
           </div>
           <div className="item user">
-            <img src={user} alt="user" />
+            <img src={user} alt="user" className='item-logo' />
             <div className="user-nav">
               {currentUser ? (
                 <>
@@ -102,9 +102,9 @@ const NavBar = () => {
           </div>
           <div className="item bucket">
             <div className="item-count">
-              <p>13</p>
+              <p>{cartCount}</p>
             </div>
-            <img src={bucket} alt="cart" onClick={() => setIsCartOpen(!isCartOpen)} />
+            <img src={bucket} alt="cart" onClick={() => setIsCartOpen(!isCartOpen)} className='item-logo' />
             {isCartOpen && <CartDropdown />}
           </div>
 
