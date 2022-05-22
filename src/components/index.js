@@ -10,5 +10,7 @@ export { default as ShopItem } from './ShopItem/ShopItem';
 export { default as CartDropdown } from './CartDropdown/CartDropdown';
 export { default as CartItem } from './CartItem/CartItem';
 
+export { default as CheckoutItem } from './CheckoutItem/CheckoutItem';
+
 export { default as SignIn } from './SignIn/SignIn';
 export { default as SignUp } from './SignUp/SignUp';

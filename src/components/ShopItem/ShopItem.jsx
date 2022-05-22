@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { MdOutlineAddShoppingCart } from 'react-icons/md';
 import { TiInputChecked } from 'react-icons/ti';
 
@@ -20,6 +20,12 @@ const ShopItem = ({ id, name, imageUrl, price, product }) => {
     removeItemFromCart(cartItems, id)
     setSelected(false)
   }
+
+  useEffect(() => {
+    if (cartItems.find(item => item.id === id)) {
+      setSelected(true)
+    }
+  }, [cartItems, id])
 
   return (
     <div className="shop__item-container">

@@ -105,7 +105,7 @@ const NavBar = () => {
               <p>{cartCount}</p>
             </div>
             <img src={bucket} alt="cart" onClick={() => setIsCartOpen(!isCartOpen)} className='item-logo' />
-            {isCartOpen && <CartDropdown />}
+            {isCartOpen && <CartDropdown setIsCartOpen={setIsCartOpen} />}
           </div>
 
           <div className="item navbar-menu">
