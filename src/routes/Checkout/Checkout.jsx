@@ -10,7 +10,7 @@ const Checkout = () => {
 
   return (
     <div className='checkout__container'>
-      {cartItems.length > 0 ? cartItems.map(item => (<CheckoutItem key={item.id} {...item} />)) : <h3>Nothing to checkout</h3>}
+      {cartItems.length > 0 ? cartItems.map(item => (<CheckoutItem key={item.id} {...item} cartItems={cartItems} />)) : <h3>Nothing to checkout</h3>}
     </div>
   )
 }

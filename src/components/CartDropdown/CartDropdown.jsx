@@ -22,7 +22,7 @@ const CartDropdown = ({ setIsCartOpen }) => {
   return (
     <div className="cart-dropdown-container">
       <div className="cart-items">
-        {cartItems.length > 0 ? cartItems.map(item => (<CartItem key={item.id} {...item} />)) : <h3 className='empty-message'>bscbu</h3>}
+        {cartItems.length > 0 ? cartItems.map(item => (<CartItem key={item.id} {...item} />)) : <h3 className='empty-message'>Cart is empty!</h3>}
       </div>
       <Button title="Go to checkout" color="inherit" className="checkout-btn" onClick={handleCheckout} />
     </div>

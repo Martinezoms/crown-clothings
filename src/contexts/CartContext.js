@@ -18,6 +18,7 @@ export const CartProvider = ({ children }) => {
   }, [cartItems]);
 
   const addItemToCart = (product) => {
+    product.quantity = 1;
     setCartItems((prev) => [...prev, product]);
   };
 
@@ -27,7 +28,15 @@ export const CartProvider = ({ children }) => {
     setCartItems(filter);
   };
 
-  const value = { isCartOpen, setIsCartOpen, cartItems, setCartItems, addItemToCart, removeItemFromCart, cartCount };
+  const value = {
+    isCartOpen,
+    setIsCartOpen,
+    cartItems,
+    setCartItems,
+    addItemToCart,
+    removeItemFromCart,
+    cartCount
+  };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
